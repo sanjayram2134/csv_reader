@@ -2,4 +2,4 @@ langchain
 langchain_community
 pandasai
 streamlit
-fdpf
+fdpf == 1.7.2
