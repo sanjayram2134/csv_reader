@@ -43,8 +43,7 @@ if uploader_file is not None:
                 st.session_state.chat_history.append(f"You: {prompt}")
                 st.session_state.chat_history.append(f"Bot: {bot_response}")
                 
-                # Clear the input box
-                st.text_area("Enter your prompt:", value='', key="user_input", disabled=True)
+                
         else:
             st.warning("Please enter a prompt!")
 
@@ -73,7 +72,7 @@ if st.session_state.chat_history:
         return pdf
 
     # Generate and provide a link to download the PDF
-    if st.button("Download Chat History as PDF"):
+    if st.button("Download Data Analysis as PDF"):
         dataset_name = os.path.splitext(uploader_file.name)[0] if uploader_file else "Unnamed Dataset"
         pdf = create_pdf(st.session_state.chat_history, dataset_name)
         pdf_output = pdf.output(dest='S').encode('latin1')
